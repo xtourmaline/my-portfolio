@@ -1,0 +1,19 @@
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    list-style: none;
+    margin-left: 25px;
+}
+
+header ul li a {
+    padding: 10px;
+    text-decoration: none;
+}
+
+img {
+    width: 200px;
+}
