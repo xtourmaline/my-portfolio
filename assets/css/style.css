@@ -1,60 +1,68 @@
+/* Universal selector */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Theme */
+:root {
+    --dark: #1f1c24;
+    --light: #d4c9c5;
+}
+
 body {
     font-family: Arial;
-    background-color: #1f1c24;
-    color: #d4c9c5;
+    background-color: var(--dark);
+    color: var(--light);
     font-size: 20px;
 }
 
+/* Header selectors */
 header {
-    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     border-bottom: 3px solid #1f1c24;
     background-color: #3f3840;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
-header h1 {
-    display: inline-block;
-    font-size: 35px;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 400px;
-}
-
-nav ul li {
-    list-style: none;
-    margin-left: 25px;
-}
-
-nav a {
-    padding: 10px;
+a {
+    color: var(--light);
     text-decoration: none;
-    color: #d4c9c5;
-    font-weight: bold;
 }
 
-nav a:hover {
-    color: #fff;
+/* Nav selectors */
+nav {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-figure img {
-    height: 20%;
-    display: grid;
-    place-items: center;
+nav span {
+    display: flex;
+    flex-direction: row;
 }
 
-/* Background Image */
+nav h1 {
+    font-size: 30px;
+}
+
+nav span a {
+    margin: 0 15px;
+    padding: 0 10px;
+}
+
+nav span a:hover {
+    background-color: var(--dark);
+    border-radius: 20px;
+    color: white
+}
+
+/* Figure selectors */
 figure {
     display: flex;
     justify-content: center;
@@ -62,17 +70,19 @@ figure {
     width: 100%;
     height: 100vh;
 }
+
+/* Background Image */
 .background-image {
-    margin: 0px;
+    margin: 0px 0px 25px 0px;
     height: 800px;
     width: auto;
-    margin-bottom: 25px;
     background-image: url("../images/background.png");
     background-size: cover;
     background-position: center;
 }
 
-.introduction{
+/* Formatting contents on the background image */
+.introduction {
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -101,12 +111,12 @@ figure {
     color: #bbc1ca;
 }
 
+/* Main selector */
 main {
     display: flex;
     flex-direction: column;
     align-content: flex-start;
-    background-color: #1f1c24;
-    margin: 2% 5%
+    margin: 5%
 }
 
 h2 {
@@ -114,43 +124,123 @@ h2 {
     margin-bottom: 3%;
 }
 
-#img1 {
+/* Formatting the About Me section */
+.about-me-container {
+    display: flex;
+    align-items: center;
+}
+
+.about-me-container img {
     height: 300px;
     float: left;
     margin: 0 20px 25px 0;
 }
 
-.container {
-    margin-bottom: 3%;
+.about-me-container div {
     display: flex;
+    flex-direction: column;
+}
+
+.about-me-container p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Used to format the Project cards */
+.container {
+    width: 100%;
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 90px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
-    flex: 1;
-    justify-content: space-evenly;
-    align-items: flex-start;
-  }
+    text-align: center;
+}
 
 .card {
-    border-style: solid;
-    min-width: 200px;
-    border-width: 1px;
-    border-radius: 10px;
+    flex: 1;
+    margin: 20px;
+    box-shadow: 0 2px 8px 0 rgb(0, 0, 0, 0.2);
+    min-width: 300px;
+    max-width: 700px;
+    border: solid;
     padding: 10px;
-    flex: 0 0 25%;
-    text-align: center;
-    font-size: 15px;
 }
 
 .card img {
     width: 100%;
-    margin-bottom: 3%;
-  }
+    height: auto;
+}
 
-.card a {
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
+.card h3 {
+    margin: 15px 0px;
+    font-size: 30px;
+    color: var(--light)
+}
+
+.card p {
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0 10px;
+    padding-bottom: 20px;
 }
 
 .card:hover {
+    transform: scale(110%);
+}
 
+/* Formatting for contact me */
+.contact-info {
+    margin-top: 25px;
+}
+
+.contact-info a {
+    text-decoration: underline solid;
+}
+
+.contact-info h3 {
+    margin-top: 30px;
+}
+
+/* Footer selectors */
+footer {
+    padding: 35px;
+    clear: both;
+    text-align: center;
+}
+
+footer h4 {
+    font-size: 15px;
+}
+
+/* Media query */
+@media screen and (max-width: 991px) {
+    nav {
+        padding: 0;
+        flex-direction: column;
+    }
+
+    nav h1 {
+        padding: 15px 0;
+    }
+
+    nav span {
+        width: 100%;
+        display: flex;
+        padding: 15px;
+        justify-content: center;
+        background-color: var(--dark);
+    }
+
+    .about-me-container p {
+        font-size: 15px;
+    }
 }
